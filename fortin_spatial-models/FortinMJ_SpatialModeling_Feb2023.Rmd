@@ -23,9 +23,9 @@ library(lme4)
 library(spdep)
 library(spgwr)
 library(vegan)
-#library(spatialreg)
-#library(ggplot2)
-#library(MuMIn)
+library(spatialreg)
+library(ggplot2)
+library(MuMIn)
 
 ```
 
