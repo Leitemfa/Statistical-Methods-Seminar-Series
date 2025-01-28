@@ -1,5 +1,5 @@
 ## Install librairies
-#require(ggplot2)
+require(ggplot2)
 require(MASS)
 require(nlme)
 require(lme4)
@@ -13,8 +13,8 @@ bird = read.csv("bird_forest.csv", header=TRUE)
 str(bird)
 plot(bird$xUTM,bird$yUTM,pch=20)
 
-#ggplot(bird, aes(xUTM, yUTM, color=Bird)) + 
-#  ggtitle("Overbird") + geom_point(show.legend=T)
+ggplot(bird, aes(xUTM, yUTM, color=Bird)) + 
+  ggtitle("Overbird") + geom_point(show.legend=T)
 
 ## OSL - Linear Regression
 plot(bird$Forest,bird$Bird)
@@ -41,7 +41,7 @@ summary(Bird.GLMMr)
 Bird.GLMM = lmer(Bird ~ Forest + (1 | Zones), data=bird,REML=FALSE)
 summary(Bird.GLMM)
 # Nakagawa & Schielzeth's: R2m=fixed effects, R2c=fixed and random effects
-#r.squaredGLMM(Bird.GLMM)
+r.squaredGLMM(Bird.GLMM)
 
 ## GLS
 Bird.GLSx = gls(Bird ~ Forest,
